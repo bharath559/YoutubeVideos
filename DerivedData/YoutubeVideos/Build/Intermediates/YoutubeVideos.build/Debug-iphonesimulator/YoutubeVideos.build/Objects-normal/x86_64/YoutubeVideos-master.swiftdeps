@@ -1,0 +1,6 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "007c3c16916e54e3df15e00b1a1b489c"
+build_time: [518967725, 637351000]
+inputs:
+  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/ViewController.swift": [518967206, 0]
+  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/AppDelegate.swift": [518967206, 0]

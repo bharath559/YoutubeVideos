@@ -14,6 +14,7 @@
 		DA0FA3131D0C4AA60023F4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0FA3111D0C4AA60023F4E4 /* LaunchScreen.storyboard */; };
 		DA0FA31E1D0C4AA60023F4E4 /* YoutubeVideosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0FA31D1D0C4AA60023F4E4 /* YoutubeVideosTests.swift */; };
 		DA0FA3291D0C4AA60023F4E4 /* YoutubeVideosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0FA3281D0C4AA60023F4E4 /* YoutubeVideosUITests.swift */; };
+		DA0FA3381D0C4E0C0023F4E4 /* Library in Resources */ = {isa = PBXBuildFile; fileRef = DA0FA3371D0C4E0C0023F4E4 /* Library */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		DA0FA3241D0C4AA60023F4E4 /* YoutubeVideosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoutubeVideosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0FA3281D0C4AA60023F4E4 /* YoutubeVideosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideosUITests.swift; sourceTree = "<group>"; };
 		DA0FA32A1D0C4AA60023F4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA0FA3361D0C4DC50023F4E4 /* YoutubeVideos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YoutubeVideos-Bridging-Header.h"; sourceTree = "<group>"; };
+		DA0FA3371D0C4E0C0023F4E4 /* Library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Library; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +100,14 @@
 		DA0FA3071D0C4AA60023F4E4 /* YoutubeVideos */ = {
 			isa = PBXGroup;
 			children = (
+				DA0FA3371D0C4E0C0023F4E4 /* Library */,
 				DA0FA3081D0C4AA60023F4E4 /* AppDelegate.swift */,
 				DA0FA30A1D0C4AA60023F4E4 /* ViewController.swift */,
 				DA0FA30C1D0C4AA60023F4E4 /* Main.storyboard */,
 				DA0FA30F1D0C4AA60023F4E4 /* Assets.xcassets */,
 				DA0FA3111D0C4AA60023F4E4 /* LaunchScreen.storyboard */,
 				DA0FA3141D0C4AA60023F4E4 /* Info.plist */,
+				DA0FA3361D0C4DC50023F4E4 /* YoutubeVideos-Bridging-Header.h */,
 			);
 			path = YoutubeVideos;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0FA3381D0C4E0C0023F4E4 /* Library in Resources */,
 				DA0FA3131D0C4AA60023F4E4 /* LaunchScreen.storyboard in Resources */,
 				DA0FA3101D0C4AA60023F4E4 /* Assets.xcassets in Resources */,
 				DA0FA30E1D0C4AA60023F4E4 /* Main.storyboard in Resources */,
@@ -400,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YoutubeVideos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.handson.YoutubeVideos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YoutubeVideos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.handson.YoutubeVideos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
