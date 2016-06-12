@@ -1,41 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OyG-y5-6Hh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OyG-y5-6Hh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Youtube Videos-->
         <scene sceneID="TN6-1a-RFF">
             <objects>
-                <tableViewController id="d9r-rj-Qg2" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="183" sectionHeaderHeight="28" sectionFooterHeight="28" id="0is-Jn-Bnq">
+                <tableViewController storyboardIdentifier="VideoTableViewController" id="d9r-rj-Qg2" customClass="VideoTableViewController" customModule="YoutubeVideos" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="228" sectionHeaderHeight="28" sectionFooterHeight="28" id="0is-Jn-Bnq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="183" id="vnd-Nb-vy6">
-                                <rect key="frame" x="0.0" y="92" width="600" height="183"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="228" id="vnd-Nb-vy6" customClass="VideoTableViewCell" customModule="YoutubeVideos" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="228"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vnd-Nb-vy6" id="9XQ-hC-xiu">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="182.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="227"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVA-Ji-1f0" customClass="YTPlayerView">
-                                            <rect key="frame" x="8" y="8" width="584" height="126"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVA-Ji-1f0" customClass="YTPlayerView">
+                                            <rect key="frame" x="8" y="8" width="584" height="171"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmK-Aq-QI2">
-                                            <rect key="frame" x="8" y="153" width="584" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmK-Aq-QI2">
+                                            <rect key="frame" x="8" y="192" width="584" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="RmK-Aq-QI2" firstAttribute="leading" secondItem="9XQ-hC-xiu" secondAttribute="leadingMargin" id="Dzk-xV-cDv"/>
+                                        <constraint firstItem="RmK-Aq-QI2" firstAttribute="trailing" secondItem="9XQ-hC-xiu" secondAttribute="trailingMargin" id="K6T-12-98f"/>
+                                        <constraint firstItem="sVA-Ji-1f0" firstAttribute="top" secondItem="9XQ-hC-xiu" secondAttribute="topMargin" id="LUU-wX-sjj"/>
+                                        <constraint firstItem="RmK-Aq-QI2" firstAttribute="top" secondItem="sVA-Ji-1f0" secondAttribute="bottom" constant="13" id="Oxh-9F-XEU"/>
+                                        <constraint firstItem="sVA-Ji-1f0" firstAttribute="trailing" secondItem="9XQ-hC-xiu" secondAttribute="trailingMargin" id="bBo-gj-MmT"/>
+                                        <constraint firstItem="RmK-Aq-QI2" firstAttribute="bottom" secondItem="9XQ-hC-xiu" secondAttribute="bottomMargin" constant="-6" id="evq-5n-1HF"/>
+                                        <constraint firstItem="sVA-Ji-1f0" firstAttribute="leading" secondItem="9XQ-hC-xiu" secondAttribute="leadingMargin" id="iIa-db-lVi"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="playerView" destination="sVA-Ji-1f0" id="8OA-Ad-Zsj"/>
+                                    <outlet property="titleText" destination="RmK-Aq-QI2" id="ZQZ-Pz-dBU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -47,7 +61,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTX-eu-BRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="639"/>
+            <point key="canvasLocation" x="262" y="435"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WgB-XE-VKB">
@@ -64,13 +78,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqA-wM-Xms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-946" y="639"/>
-        </scene>
-        <!--AV Player View Controller-->
-        <scene sceneID="n7A-5s-auP">
-            <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="x0u-3z-H6Z" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5AT-Fq-6XM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
 </document>
