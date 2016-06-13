@@ -45,7 +45,6 @@ class SortTableViewController: UITableViewController {
             
         }
         
-        
         cell?.accessoryType = .Checkmark
         
         return indexPath

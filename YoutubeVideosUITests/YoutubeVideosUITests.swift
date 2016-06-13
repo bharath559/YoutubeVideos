@@ -29,8 +29,18 @@ class YoutubeVideosUITests: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        
+        let table = tablesQuery.tables.elementBoundByIndex(0)
+        XCTAssertNotNil(table)
+    
+        app.navigationBars["Youtube Videos"].buttons["Sort"].tap()
+        XCTAssertNotNil(tablesQuery.staticTexts["Ascending"])
+        
+        
     }
     
 }

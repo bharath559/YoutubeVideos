@@ -1,10 +1,11 @@
 version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
 options: "58d0ea78e29f7ed225edb605150b0492"
-build_time: [519094832, 465056000]
+build_time: [519135892, 342328000]
 inputs:
-  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/VideoTableViewController.swift": !dirty [519094802, 0]
-  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/VideoModel.swift": !private [519094810, 0]
-  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/VideoTableViewCell.swift": !dirty [519090950, 0]
-  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/NetworkManager.swift": !dirty [519090950, 0]
-  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/AppDelegate.swift": !dirty [519090950, 0]
-  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/Utils.swift": !dirty [9223372036854775807, 0]
+  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/VideoTableViewController.swift": [519103923, 0]
+  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/VideoModel.swift": [519095979, 0]
+  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/VideoTableViewCell.swift": [519090950, 0]
+  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/NetworkManager.swift": [519106304, 0]
+  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/AppDelegate.swift": [519103934, 0]
+  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/SortTableViewController.swift": [519106290, 0]
+  "/Users/bkongara/Desktop/YoutubeVideos/YoutubeVideos/Utils.swift": [519105716, 0]

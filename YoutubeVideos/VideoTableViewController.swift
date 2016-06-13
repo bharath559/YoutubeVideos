@@ -57,7 +57,7 @@ class VideoTableViewController: UITableViewController, NetworkManagerDelegate,UI
         return cell
     }
     
-    
+    //MARK: NetworkManagerDelegate
     func didFinishGettingData(){
         
         self.tableView.reloadData()
@@ -74,9 +74,6 @@ class VideoTableViewController: UITableViewController, NetworkManagerDelegate,UI
             popOverViewController.preferredContentSize = CGSize(width: 200, height: 120)
             popOverViewController.popoverPresentationController?.delegate = self
             
-//            utils.sortVideoData()
-//            self.tableView.reloadData()
-            
         }
         
     }
@@ -85,6 +82,8 @@ class VideoTableViewController: UITableViewController, NetworkManagerDelegate,UI
         return .None
     }
     
+    
+    //MARK: SortSelectionDelegate
     func sortData() {
         
         self.tableView.reloadData()

@@ -93,6 +93,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -113,13 +114,76 @@ SWIFT_CLASS("_TtC13YoutubeVideos11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+SWIFT_CLASS("_TtC13YoutubeVideos14NetworkManager")
+@interface NetworkManager : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull getJsonURL;
++ (NetworkManager * _Nonnull)sharedInstance;
+- (void)getVideosForChannel;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSUserDefaults;
+@class UITableView;
+@class NSIndexPath;
+@class UITableViewCell;
 @class NSBundle;
 @class NSCoder;
 
-SWIFT_CLASS("_TtC13YoutubeVideos14ViewController")
-@interface ViewController : UIViewController
+SWIFT_CLASS("_TtC13YoutubeVideos23SortTableViewController")
+@interface SortTableViewController : UITableViewController
+@property (nonatomic, readonly, strong) NSUserDefaults * _Nonnull defaults;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (NSIndexPath * _Nullable)tableView:(UITableView * _Nonnull)tableView willSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView willDisplayCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSDate;
+
+SWIFT_CLASS("_TtC13YoutubeVideos10VideoModel")
+@interface VideoModel : NSObject
+@property (nonatomic, copy) NSString * _Nonnull videoId;
+@property (nonatomic, copy) NSString * _Nonnull thumbNail;
+@property (nonatomic, copy) NSString * _Nonnull title;
+@property (nonatomic, strong) NSDate * _Nonnull publishedDate;
+@property (nonatomic, copy) NSArray<VideoModel *> * _Nonnull videosArray;
+- (nonnull instancetype)initWithVideoId:(NSString * _Nonnull)videoId thumbNail:(NSString * _Nonnull)thumbNail title:(NSString * _Nonnull)title publishedDate:(NSDate * _Nonnull)publishedDate OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class YTPlayerView;
+@class UILabel;
+
+SWIFT_CLASS("_TtC13YoutubeVideos18VideoTableViewCell")
+@interface VideoTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet YTPlayerView * _Null_unspecified playerView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified titleText;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIStoryboardSegue;
+@class UIPresentationController;
+
+SWIFT_CLASS("_TtC13YoutubeVideos24VideoTableViewController")
+@interface VideoTableViewController : UITableViewController <UIAdaptivePresentationControllerDelegate, UIPopoverPresentationControllerDelegate>
+@property (nonatomic, readonly, strong) NetworkManager * _Nonnull networkManager;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)didFinishGettingData;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController * _Nonnull)controller;
+- (void)sortData;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
