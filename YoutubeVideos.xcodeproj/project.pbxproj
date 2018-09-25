@@ -240,6 +240,7 @@
 				TargetAttributes = {
 					DA0FA3041D0C4AA60023F4E4 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = MYTNAMH6F2;
 					};
 					DA0FA3181D0C4AA60023F4E4 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -503,6 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MYTNAMH6F2;
 				INFOPLIST_FILE = YoutubeVideos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -520,6 +522,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MYTNAMH6F2;
 				INFOPLIST_FILE = YoutubeVideos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
