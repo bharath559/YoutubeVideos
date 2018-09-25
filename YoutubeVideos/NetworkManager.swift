@@ -25,7 +25,7 @@ class NetworkManager: NSObject {
     
     func getVideosForChannel(){
         
-        let jsonUrl:NSURL = NSURL(string: getJsonURL)!
+        let jsonUrl:URL = URL(string: getJsonURL)!
         
         let utils:Utils = Utils()
         

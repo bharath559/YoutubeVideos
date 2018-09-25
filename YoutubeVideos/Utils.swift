@@ -11,22 +11,22 @@ import UIKit
 class Utils {
     
     
-    func sortVideoData(order:String) -> Void{
+    func sortVideoData(_ order:String) -> Void{
         
         if order == "ascending"{
-            videosArray.sortInPlace({ $0.publishedDate.compare($1.publishedDate) == .OrderedAscending })
+            videosArray.sort(by: { $0.publishedDate.compare($1.publishedDate as Date) == .orderedAscending })
         }
         else if order == "descending"{
-            videosArray.sortInPlace({ $0.publishedDate.compare($1.publishedDate) == .OrderedDescending })
+            videosArray.sort(by: { $0.publishedDate.compare($1.publishedDate as Date) == .orderedDescending })
         }
     }
 
-    func dateFromString(dateString:String) -> NSDate{
+    func dateFromString(_ dateString:String) -> Date{
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        dateFormatter.timeZone = NSTimeZone(name: "UTC")
-        let date:NSDate = dateFormatter.dateFromString(dateString)!
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        let date:Date = dateFormatter.date(from: dateString)!
         
         return date
         

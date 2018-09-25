@@ -34,7 +34,7 @@ class YoutubeVideosUITests: XCTestCase {
         let app = XCUIApplication()
         let tablesQuery = app.tables
         
-        let table = tablesQuery.tables.elementBoundByIndex(0)
+        let table = tablesQuery.tables.element(boundBy: 0)
         XCTAssertNotNil(table)
     
         app.navigationBars["Youtube Videos"].buttons["Sort"].tap()

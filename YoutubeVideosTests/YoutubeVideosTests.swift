@@ -17,7 +17,7 @@ class YoutubeVideosTests: XCTestCase {
         super.setUp()
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        viewUnderTest = storyboard.instantiateViewControllerWithIdentifier("VideoTableViewController") as! UITableViewController
+        viewUnderTest = storyboard.instantiateViewController(withIdentifier: "VideoTableViewController") as! UITableViewController
         
         //load view hierarchy
         _ = viewUnderTest.view
@@ -50,20 +50,20 @@ class YoutubeVideosTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        let todayDate = NSDate()
-        let dateFormatter = NSDateFormatter()
+        let todayDate = Date()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        dateFormatter.timeZone = NSTimeZone(name: "UTC")
-        let dateString:String = dateFormatter.stringFromDate(todayDate)
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        let dateString:String = dateFormatter.string(from: todayDate)
         
         let utils:Utils = Utils()
-        let date:NSDate =  utils.dateFromString(dateString)
-        print(date.compare(todayDate) == NSComparisonResult.OrderedSame)
-        let calendar = NSCalendar.currentCalendar()
-        let unitFlags: NSCalendarUnit = [.Hour, .Day, .Month, .Year]
+        let date:Date =  utils.dateFromString(dateString)
+        print(date.compare(todayDate) == ComparisonResult.orderedSame)
+        let calendar = Calendar.current
+        let unitFlags: NSCalendar.Unit = [.hour, .day, .month, .year]
         
         
-        XCTAssertTrue(calendar.compareDate(date, toDate: todayDate, toUnitGranularity: unitFlags) == NSComparisonResult.OrderedSame)
+        XCTAssertTrue((calendar as NSCalendar).compare(date, to: todayDate, toUnitGranularity: unitFlags) == ComparisonResult.orderedSame)
         
     }
     

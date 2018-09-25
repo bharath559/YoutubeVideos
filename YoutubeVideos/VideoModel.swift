@@ -13,12 +13,12 @@ class VideoModel: NSObject {
     var videoId:String
     var thumbNail:String
     var title:String
-    var publishedDate:NSDate
+    var publishedDate:Date
     
     var videosArray: [VideoModel] = []
     
     
-    init(videoId:String,thumbNail:String,title:String,publishedDate:NSDate) {
+    init(videoId:String,thumbNail:String,title:String,publishedDate:Date) {
         
         self.videoId = videoId
         self.thumbNail = thumbNail

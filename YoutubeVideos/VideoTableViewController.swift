@@ -21,7 +21,7 @@ class VideoTableViewController: UITableViewController, NetworkManagerDelegate,UI
         self.networkManager.delegate = self
         
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
        
         self.networkManager.getVideosForChannel()
         
@@ -29,27 +29,27 @@ class VideoTableViewController: UITableViewController, NetworkManagerDelegate,UI
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
 
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         return videosArray.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        let cell:VideoTableViewCell = tableView.dequeueReusableCellWithIdentifier("VideoTableViewCell", forIndexPath: indexPath) as! VideoTableViewCell
+        let cell:VideoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as! VideoTableViewCell
         
        let cellData:VideoModel = videosArray[indexPath.row] 
        
         cell.playerView.loadWithVideoId(cellData.videoId)
         
-        let playerDic : [NSObject:AnyObject] = [ "playsinline": "1"]
+        let playerDic : [AnyHashable: Any] = [ "playsinline": "1"]
         
         cell.playerView.loadWithVideoId(cellData.videoId, playerVars:playerDic)
         cell.titleText.text = cellData.title
@@ -63,14 +63,14 @@ class VideoTableViewController: UITableViewController, NetworkManagerDelegate,UI
         self.tableView.reloadData()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "PopOver" {
           
-            let popOverViewController:SortTableViewController = segue.destinationViewController as! SortTableViewController
+            let popOverViewController:SortTableViewController = segue.destination as! SortTableViewController
             popOverViewController.sortDelegate = self
             
-            popOverViewController.modalPresentationStyle = .Popover
+            popOverViewController.modalPresentationStyle = .popover
             popOverViewController.preferredContentSize = CGSize(width: 200, height: 120)
             popOverViewController.popoverPresentationController?.delegate = self
             
@@ -78,8 +78,8 @@ class VideoTableViewController: UITableViewController, NetworkManagerDelegate,UI
         
     }
     
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .None
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
     
     
@@ -87,7 +87,7 @@ class VideoTableViewController: UITableViewController, NetworkManagerDelegate,UI
     func sortData() {
         
         self.tableView.reloadData()
-        dismissViewControllerAnimated(true) { 
+        dismiss(animated: true) { 
             
         }
     }
